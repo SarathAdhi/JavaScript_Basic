@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo2"></p>
+
+<script type="text/javascript">
+	var car = {
+		model: "bmw 320d",
+		color: "blue",
+		fuel_type: "diesel",
+		get fuel(){
+			return this.fuel_type
+		},
+	};
+	document.getElementById("demo").innerHTML = car.fuel;
+
+</script>
+
+<script type="text/javascript">
+	var car = {
+		model: "audi a4",
+		color: "red",
+		fuel_type: "",
+		set fuel(fuel){
+			this.fuel_type = fuel;
+		},
+	};
+	car.fuel = "petrol";
+	document.getElementById("demo2").innerHTML = car.fuel_type;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<p id="demo"></p>
+<button id="clickme">click me</button>	<!-- when the button is pressed it alerts hello-->
+
+<script type="text/javascript">
+	let user = {
+		name: "sarath",
+		age: 21,
+	};
+	function sayhi(){
+		alert("hello");
+	}
+	user.message = sayhi;
+
+	document.getElementById("demo").innerHTML = "hi " + user.name;
+	document.getElementById("clickme").onclick = user.message;
+
+</script>
+</body>
+</html>

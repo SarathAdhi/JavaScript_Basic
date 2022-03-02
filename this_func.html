@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<p id="demo"></p>
+	<p id="demo2"></p>
+	<p id="demo3"></p>
+	<p id="demo4"></p>
+<script type="text/javascript">
+	var value = 50;
+
+	function func(){
+		var value = 100;
+		document.getElementById('demo').innerHTML = "Value: "+value;	//100 -> takes local variable
+		document.getElementById('demo2').innerHTML = "Using 'THIS' Value: "+ this.value;		//50 -> takes global value
+	}
+
+	func();
+</script>
+
+<script type="text/javascript">
+	var name = "sarath";
+
+	var random = {
+		name: "John",
+		info(){
+			document.getElementById("demo3").innerHTML = "Hii, My name is " + this.name;		//takes local variable
+			document.getElementById("demo4").innerHTML = "Hii, My name is " + name;				//takes global variable
+		}
+	}
+
+	random.info();
+</script>
+</body>
+</html>

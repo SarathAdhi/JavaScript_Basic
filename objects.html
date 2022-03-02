@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+<script type="text/javascript">
+	var student = {				//creating object using literals
+		name:"sarath",
+		age:"21",
+		course:"cse",
+	};
+	document.getElementById("demo").innerHTML = student.name + " of age "+ student.age + " have take the course "+student.course;
+
+</script>
+
+<script type="text/javascript">
+	var student = new Object();		//object created using keyword new
+	student.name = "viji",
+	student.age = 20;
+	student.course = "ece";
+	document.getElementById("demo2").innerHTML = student.name + " of age "+ student.age + " have take the course "+student.course;
+</script>
+
+<script type="text/javascript">
+	//object created using object constructor
+	function stud(name, age, course){	
+		this.name = name;
+		this.age = age;
+		this.course = course;
+	}
+	var student = stud("mahesh", 24, "cse");
+	
+	document.getElementById("demo3").innerHTML = student.name + " of age "+ student.age + " have take the course "+student.course;
+</script>
+
+</body>
+</html>

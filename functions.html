@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<input type="number" id="input">
+<button id="clickme">submit</button>
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<script type="text/javascript">
+	function assign() {
+		let i_p = document.getElementById("input").valueAsNumber;
+		square(i_p);
+		square2(i_p);
+	}
+	function square(val) {
+		document.getElementById("demo").innerHTML = val*val;
+	}
+	
+	document.getElementById("clickme").onclick = assign;
+	
+
+	//or
+	let x = function square2(val) {
+		return val*val;
+	}
+	document.getElementById("demo2").innerHTML = "2). " + x(5);	
+
+</script>
+
+<script type="text/javascript">
+	var myfunc = new Function("a", "b", "return a+b");
+	var y = myfunc(2,3);
+	document.getElementById("demo3").innerHTML = "3). The sum is " + y;
+</script>
+
+<script type="text/javascript">
+	(function() {
+		alert("hello..! Welcome")
+	})();				//self invoking func
+</script>
+
+<script type="text/javascript">
+	const myfunc2 = (a,b,c) => {		//arrow function
+		return a*b*c;
+	}
+
+	let product = myfunc2(2, 4, 3)
+	document.getElementById("demo4").innerHTML = "4). The product is " + product
+</script>
+
+
+</body>
+</html>

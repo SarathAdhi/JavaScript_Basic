@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<p id="demo8"></p>
+<p id="demo9"></p>
+<p id="demo10"></p>
+<p id="demo11"></p>
+<p id="demo12"></p>
+<p id="demo13"></p>
+<p id="demo14"></p>
+<p id="demo11"></p>
+<p id="demo11"></p>
+<p id="demo11"></p>
+<p id="demo11"></p>
+<p id="demo11"></p>
+<p id="demo11"></p>
+
+<script type="text/javascript">
+
+	let cars = ["bmw", "honda", "benz", "volvo"];						//creating array
+	document.getElementById("demo").innerHTML = cars;			//displaying array
+
+	document.getElementById("demo1").innerHTML = cars[0]; 		//displaying array[0]
+
+	let len = cars.length;
+	document.getElementById("demo2").innerHTML = len;
+
+	cars.forEach((item,index,array) => {
+		console.log(item, index);				//console log prints in console. press F12 and go to console
+	}); 
+
+	let del = cars.pop();
+	document.getElementById("demo3").innerHTML = del;	//displays popped element name
+
+	cars.push("audi");									//push function(pushes the element to last index in array)
+	document.getElementById("demo4").innerHTML = cars;
+
+	cars.shift();										//removes the first element from the array
+	document.getElementById("demo5").innerHTML = cars;
+
+	cars.unshift("porshe");										//adds the element to the first index of the array
+	document.getElementById("demo6").innerHTML = cars;
+
+	let bikes = ["tvs", "suzuki", "royal enfield"];			//creating array
+	document.getElementById("demo7").innerHTML = bikes;			//displaying array
+
+	let vehicles = cars.concat(bikes);						//merging two diff array
+	document.getElementById("demo8").innerHTML = vehicles;			
+
+	vehicles.sort();										//sorting the array in ascending order
+	document.getElementById("demo9").innerHTML = vehicles;
+
+	vehicles.reverse();										//sorting the array in descending order
+	document.getElementById("demo10").innerHTML = vehicles;
+
+	let num1 = [1,2,3,4,5,6,7];
+	document.getElementById("demo11").innerHTML = num1;
+
+	let num2 = num1.map(multiply);						//maps array num1 to num2 and a function multiply is called which return the value multiplied by 2
+	function multiply(value) {
+		return value*2;
+	}
+	document.getElementById("demo12").innerHTML = num2;
+
+	let num3 = num1.filter(comp);						//filters array num1 to num3 and a function comp is called which appends the value > 4 to the array num3
+	function comp(value) {
+		return value>4;
+	}
+	document.getElementById("demo13").innerHTML = num3;
+
+	let num4 = num1.reduce(sum);			//reduces an array of value down to just 1 value using a function. function sum is called which adds all the value in the array
+	function sum(total, value) {
+		return total+value;
+	}
+	document.getElementById("demo14").innerHTML = num4;
+
+</script>
+</body>
+</html>

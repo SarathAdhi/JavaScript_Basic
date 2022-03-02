@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+<p id="demo"></p>
+<p id="demo2"></p>
+
+
+<script type="text/javascript">
+	let car = new Promise(function(resolve,reject){
+		fuel_fulltank = true;		//change to False
+		if(fuel_fulltank)
+			resolve();
+		else
+			reject();
+	});
+
+	car.then(function(){
+		document.getElementById('demo').innerHTML = "The tank is full. happy driving";
+	}).catch(function(){
+		document.getElementById('demo').innerHTML = "The tank is Empty.";
+	})
+</script>
+<script type="text/javascript">
+	let empty_tank = function(){
+		return new Promise(function(resolve,reject){
+			resolve("The car doesnt have enough fuel")
+		})
+	}
+	let engine = function(msg){
+		return new Promise(function(resolve,reject){
+			resolve(msg + " The Engine is overheating")
+		})
+	}
+	let travel = function(msg){
+		return new Promise(function(resolve,reject){
+			resolve(msg + " The car is not safe for travelling")
+		})
+	}
+
+	empty_tank().then(function(result){
+		return engine(result);
+	}).then(function(result){
+		return travel(result);
+	}).then(function(result){
+		document.getElementById('demo2').innerHTML = "DONE " + result;
+	})
+
+</script>
+</body>
+</html>
